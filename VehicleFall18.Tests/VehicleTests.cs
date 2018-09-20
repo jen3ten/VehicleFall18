@@ -75,5 +75,61 @@ namespace VehicleFall18.Tests
             //Assert
             Assert.That(response, Is.EqualTo("1965"));
         }
+
+        [Test]
+        public void Set_Engine_Size()
+        {
+            ////Test the Engine size property
+            ////Set engine size to 5.0 and return 5.0
+
+            //Arrange
+            Vehicle vehicle = new Vehicle();
+            //Act
+            vehicle.EngSize = 5.0;
+            //Assert
+            Assert.That(vehicle.EngSize, Is.EqualTo(5.0));
+        }
+
+        [Test]
+        public void Set_Rim_Size()
+        {
+            ////Test the Rim size property
+            ////Set rim size to 16 and return 16
+
+            //Arrange
+            Vehicle vehicle = new Vehicle();
+            //Act
+            vehicle.RimSize = 16;
+            //Assert
+            Assert.That(vehicle.RimSize, Is.EqualTo(16));
+        }
+
+        [Test]
+        public void Set_Veh_Color()
+        {
+            ////Test the vehicle color property
+            ////Set vehicle color to red and return red
+
+            //Arrange
+            Vehicle vehicle = new Vehicle();
+            //Act
+            vehicle.Color = "red";
+            //Assert
+            Assert.That(vehicle.Color, Is.EqualTo("red"));
+        }
+
+        [Test]
+        public void Get_MPH_Return_0()
+        {
+            ////Test that GetMph() method returns 0
+
+            //Arrange
+            Vehicle vehicle = new Vehicle();
+            //Act
+            int response = vehicle.GetMph();
+            //Assert
+            Assert.That(response, Is.EqualTo(0));
+        }
+
     }
 }
