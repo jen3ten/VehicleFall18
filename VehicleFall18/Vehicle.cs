@@ -44,8 +44,8 @@ namespace VehicleFall18
         }
         public string Color
         {
-            get { return this.Color; }
-            set { this.Color = value; }
+            get { return this.color; }
+            set { this.color = value; }
         }
 
         //Constructors
@@ -67,9 +67,15 @@ namespace VehicleFall18
         }
 
         //Methods
-        public int GetMph()
+        public int GetMph(double distance, double time)
         {
-            return (0);
+            if(time == 0)
+            {
+                return (0);
+            }
+            double mph = distance / (time / 60.0);
+            mph = Math.Round(mph);
+            return (Convert.ToInt32(mph));
         }
     }
 }

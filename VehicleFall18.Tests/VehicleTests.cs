@@ -118,18 +118,30 @@ namespace VehicleFall18.Tests
             Assert.That(vehicle.Color, Is.EqualTo("red"));
         }
 
+        //[Test]
+        //public void Get_MPH_Return_0()
+        //{
+        //    ////Test that GetMph() method returns 0
+
+        //    //Arrange
+        //    Vehicle vehicle = new Vehicle();
+        //    //Act
+        //    int response = vehicle.GetMph(0, 0);
+        //    //Assert
+        //    Assert.That(response, Is.EqualTo(0));
+        //}
+
         [Test]
-        public void Get_MPH_Return_0()
+        public void Get_MPH_Return_9()
         {
-            ////Test that GetMph() method returns 0
+            ////Test that GetMph() method returns 9 if time=7, distance=1
 
             //Arrange
             Vehicle vehicle = new Vehicle();
             //Act
-            int response = vehicle.GetMph();
+            int response = vehicle.GetMph(1.0, 7.0);
             //Assert
-            Assert.That(response, Is.EqualTo(0));
+            Assert.That(response, Is.EqualTo(9));
         }
-
     }
 }
