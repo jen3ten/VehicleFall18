@@ -118,18 +118,18 @@ namespace VehicleFall18.Tests
             Assert.That(vehicle.Color, Is.EqualTo("red"));
         }
 
-        //[Test]
-        //public void Get_MPH_Return_0()
-        //{
-        //    ////Test that GetMph() method returns 0
+        [Test]
+        public void Get_MPH_Return_0()
+        {
+            ////Test that GetMph() method returns 0
 
-        //    //Arrange
-        //    Vehicle vehicle = new Vehicle();
-        //    //Act
-        //    int response = vehicle.GetMph(0, 0);
-        //    //Assert
-        //    Assert.That(response, Is.EqualTo(0));
-        //}
+            //Arrange
+            Vehicle vehicle = new Vehicle();
+            //Act
+            int response = vehicle.GetMph(0, 0);
+            //Assert
+            Assert.That(response, Is.EqualTo(0));
+        }
 
         [Test]
         public void Get_MPH_Return_9()
@@ -142,6 +142,22 @@ namespace VehicleFall18.Tests
             int response = vehicle.GetMph(1.0, 7.0);
             //Assert
             Assert.That(response, Is.EqualTo(9));
+        }
+
+        [Test]
+        public void Get_MPG_Return_49_94()
+        {
+            ////Test that GetMpg() method returns 49.94 if
+            ////  startODO = 3579
+            ////  endODO = 3117 ?? end is smaller than start??
+            ////  tankSize = 9251 ?? what is the unit here??
+
+            //Arrange
+            Vehicle vehicle = new Vehicle();
+            //Act
+            string response = vehicle.GetMpg(3579.0, 3117.0, 9.251);
+            //Assert
+            Assert.That(response, Is.EqualTo("49.94"));
         }
     }
 }

@@ -77,5 +77,12 @@ namespace VehicleFall18
             mph = Math.Round(mph);
             return (Convert.ToInt32(mph));
         }
+
+        public string GetMpg(double endODO, double startODO, double tankSize)
+        {
+            double mpg = (endODO - startODO) / tankSize;
+            mpg = Math.Round(mpg, 2);
+            return (mpg.ToString());
+        }
     }
 }
